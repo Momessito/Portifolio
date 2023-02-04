@@ -23,7 +23,7 @@
         <div>
             <a onclick="descer()">Home</a>
             <a onclick="descer2()">Sobre Mim</a>
-            <a>Competencias</a>
+            <a onclick="descer3()">Competencias</a>
             <a>Projetos</a>
         </div>
 
@@ -37,7 +37,8 @@
             <div class="title">Felipe Momesso</div>
             <div class="DescInit">Desenvolvedor <span>Front End e Ilustrador</span></div>
             <div style="margin-top: 60px;">
-                <a href="https://github.com/Momessito"><button class="shadow__btn" style="animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;">
+                <a href="https://github.com/Momessito"><button class="shadow__btn"
+                        style="animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;">
                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-github"
                             viewBox="0 0 16 16">
                             <path
@@ -66,8 +67,8 @@
             <path fill-rule="evenodd"
                 d="M1.553 6.776a.5.5 0 0 1 .67-.223L8 9.44l5.776-2.888a.5.5 0 1 1 .448.894l-6 3a.5.5 0 0 1-.448 0l-6-3a.5.5 0 0 1-.223-.67z" />
         </svg></div>
-    <div class="canvasTwo" id="dois">
-        <div class="canvasTwoimage"><img src="my.jpeg" width="300px"></div>
+    <div class="canvasTwo" >
+        <div class="canvasTwoimage" ><img id="dois" src="my.jpeg" width="300px"></div>
 
         <div style="margin-left:30px;">
             <div class="CanvasTwoTitl">Sobre mim</div>
@@ -86,14 +87,33 @@
                 </button></a>
         </div>
     </div>
+    <div class="canvasThree" id="tres">
+        <div style="  height: 220px;background-color: #17181a
+        ;">
+            <h2 onclick="ChangeText()">MY TRIP</h2>
+            <h2 onclick="ChangeText2()">COMPETENCIAS</h2>
+            <h2 onclick="ChangeText3()">CURSOS</h2>
+        </div>
+        <div id="text">Terminei meu ensino medio em 2021, apos isso começei minha jornada na area de tecnlogia, fiz
+            alguns cursos online, apos isso fiz um curso sobre Eletronica , Modelagem 3D e Corte a laser, e assim que
+            terminei ele começei meu curso tecnico em Desenvolvimento de sistemas e continuo fazendo cursos ao mesmo
+            tempo para me especializar.</div>
+    </div>
 </body>
+
+
 
 <script>
     window.sr = ScrollReveal({ reset: true })
-    ScrollReveal().reveal('.canvasTwo', { duration: 500 });
+    ScrollReveal().reveal('.canvasTwo', { duration: 800 });
+    ScrollReveal().reveal('.canvasThree', { duration: 800 });
 
     function descer2() {
         document.getElementById('dois').scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+
+    }
+    function descer3() {
+        document.getElementById('tres').scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
 
     }
     function descer() {
@@ -101,6 +121,16 @@
 
     }
 
+
+    function ChangeText() {
+        document.getElementById('text').innerHTML = 'Terminei meu ensino medio em 2021, apos isso começei minha jornada na area de tecnlogia, fiz alguns cursos online, apos isso fiz um curso sobre Eletronica , Modelagem 3D e Corte a laser, e assim que terminei ele começei meu curso tecnico em Desenvolvimento de sistemas e continuo fazendo cursos ao mesmo tempo para me especializar.'
+    }
+    function ChangeText2() {
+        document.getElementById('text').innerHTML = 'Html <br> CSS <br> Bootstrap <br> JavaScript <br> C++ <br> React <br> Photoshop <br> Figma <br> Ingles Intermediario'
+    }
+    function ChangeText3() {
+        document.getElementById('text').innerHTML = 'Curso de fabricação digital - Governo do Estado de São Paulo - 2022<br> Curso em nuvem e inteligência artificial  - FUNDAÇÃO FAT - 2021<br>Desenvolvimento de sistemas - Etec - 2023 DEZ<BR> JavaScript completo com Professor Dimitri - 2022'
+    }
 
 
 </script>
