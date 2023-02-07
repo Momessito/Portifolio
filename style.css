@@ -1,9 +1,10 @@
 body {
   margin: 0;
-  background-color: #1d1e22;
+  background-image: linear-gradient(#1d1e22,#0a0a0a);
   color: #E1F1FF;
   font-family: 'Poppins', sans-serif;
   overflow-x: hidden;
+ padding: 0
 }
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
@@ -115,7 +116,7 @@ body {
   margin: 5px;
   font-family: 'EB Garamond', serif;
   font-weight: 200;
-  animation: text-pop-up-right 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: text-pop-up-right 4.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 
@@ -125,9 +126,11 @@ body {
     transform: translateX(0);
     transform-origin: 50% 50%;
     text-shadow: none;
+    visibility: hidden;
   }
 
   100% {
+    visibility: visible;
     transform: translateX(50px);
     transform-origin: 50% 50%;
     text-shadow: 0 1px 0 #101218, 0 2px 0 #101218, 0 3px 0 #101218, 0 4px 0 #101218, 0 5px 0 #101218, 0 6px 0 #101218, 0 7px 0 #101218, 0 8px 0 #101218, 0 9px 0 #101218, 0 50px 30px rgba(0, 0, 0, 0.3);
@@ -275,15 +278,28 @@ nav a:hover {
 }
 
 .canvasTwo {
+
   display: flex;
   visibility: hidden;
-  width: 57%;
-  margin-left: 50%;
-  transform: translate(-50%);
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-top: 200px;
 
 }
+.canvasTwoS{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  padding: 5px;
+  background-color: #2b2d3200;
+  border: 3px solid #00fff200;
 
+}
 .canvasTwoimage img {
   border-radius: 5px;
 }
@@ -310,9 +326,12 @@ nav a:hover {
 }
 
 .canvasTwoimage {
+  margin-bottom: 10px;
   transition: 0.2s all linear;
-  width: 300px;
+  width: auto;
   height: auto;
+  animation: subir 5s infinite;
+
 }
 
 .canvasTwoimage:hover {
@@ -330,7 +349,7 @@ nav a:hover {
   top: 1.5px;
   border-radius: 7px;
   left: 3px;
-  width: 290px;
+  width: 210px;
   height: 290px;
   z-index: -1;
   background-color: transparent;
@@ -347,9 +366,9 @@ nav a:hover {
   top: -5px;
   border-radius: 7px;
   left: -5px;
-  width: 310px;
+  width: 210px;
   z-index: -2;
-  height: 310px;
+  height: 210px;
   visibility: hidden;
   transition: 0.2s all linear;
   background: linear-gradient(300deg, deepskyblue, darkviolet, blue);
@@ -365,7 +384,7 @@ nav a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 50px;
+  margin-top: 100px;
   font-weight: lighter;
   width: 100%;
   font-size: x-large;
@@ -381,7 +400,11 @@ nav a:hover {
 
 ::-webkit-scrollbar{
 visibility: hidden;
+background-color: black;
 width: 5px;
+}
+::-webkit-scrollbar-corner{
+  background-color: transparent;
 }
 ::-webkit-scrollbar-thumb{
   background: linear-gradient(240deg, deepskyblue, darkviolet, blue);
@@ -391,8 +414,9 @@ width: 5px;
   z-index: 10;
 }
 .canvasThree{
+  
   display: flex;
-  margin-top: 400px;
+  margin-top: 00px;
   justify-content: center;
   margin-bottom: 50px;
 }
@@ -411,4 +435,226 @@ width: 5px;
   width: 50%;
   height: 180px;
   background-color: #2b2d32;
+  border-top: 3px solid #00fff2;
+  border-bottom: 3px solid #00fff2;
+  border-right: 3px solid #00fff2;
+
 } 
+.drawOne{
+  animation: subir 5s infinite;
+}
+@keyframes subir {
+  0% {
+    transform: translateY(10px);
+  }
+
+  50% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateY(10px);
+  }
+}
+
+
+#rssBlock{
+  left:0px;
+  height: 70px;
+  background: #2927273f;
+  position: absolute;
+  width:100%;
+  margin-top: 0px;
+  margin-left: 50%;
+  transform: translate(-50%);
+  overflow: hidden;
+}
+
+/*remove p*/
+.cnnContents {
+  width:100%;
+  padding-top: 20px;
+  margin:0 auto;
+  font-size: 30px;
+  white-space: nowrap;
+  text-transform: uppercase;
+  font-family: 'Museo';
+  font-weight: 300;
+}
+
+.marqueeStyle {
+  display:inline-block;
+  /* Apply animation to this element */
+  -webkit-animation: scrolling-left1 20s linear infinite;
+  animation: scrolling-left1 20s linear infinite;
+}
+
+.marqueeStyle2 {
+  display:inline-block;
+  /* Apply animation to this element */
+  -webkit-animation: scrolling-left2 20s linear infinite;
+  animation: scrolling-left2 20s linear infinite;
+  animation-delay: 5s;
+}
+/* scrolling-left is continuous/repeatly text */
+@keyframes scrolling-left1 {
+    0% {transform: translateX(100%);
+        -webkit-transform: translateX(100%);}
+      100% {transform: translateX(-100%);
+          -webkit-transform: translateX(-100%);}
+}
+@keyframes scrolling-left2 {
+    0% {transform: translateX(0%);
+        -webkit-transform: translateX(0%);}
+      100% {transform: translateX(-200%);
+          -webkit-transform: translateX(-200%);}
+}
+
+@-webkit-keyframes scrolling-left1 {
+    0% {-webkit-transform: translateX(100%);}
+      100% {-webkit-transform: translateX(-100%);}
+}
+@-webkit-keyframes scrolling-left2 {
+    0% {-webkit-transform: translateX(0%);}
+      100% {-webkit-transform: translateX(-200%);}
+}
+
+
+.canvasFourimage{
+  display: flex;
+  margin: 100px;
+  margin-top: 30%;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+}
+.projects{
+  margin: 0.1%;
+  width: 32%;
+  font-weight: lighter;
+  text-align: center;
+  font-size: small;
+  border: 2px solid rgba(255, 255, 255, 0.473);
+  border-radius: 5px;
+  color: rgba(255, 255, 255, 0.473);
+
+  padding: 5px 0px;
+}
+.canvasFourimage h1{
+  width: 100%;
+}
+.projects a{
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.473);
+}
+.projects img{
+  width: 80%;
+}
+.projects:hover img{
+   transform: scale(1.05);
+}
+.projects:hover h1{
+   transform: scale(1.08);
+}
+.projects:hover{
+  transform: scale(1.08);
+
+}
+@media screen  and (max-width:426px) {
+  .Title{
+    text-align: left;
+    width: 100% !important;
+    margin-left: 40px;
+    font-size: 4.5em;
+  }
+  .drawOne{
+    width: 40%;
+    height: auto;
+  }
+  .canvasOne{
+    flex-direction: column !important;
+  }
+  .DescInit{
+    font-size: small;
+  }
+}
+
+@media screen  and (max-width:1259px) {
+  .DescInit{
+    font-size: medium;
+  }
+  .title{
+    font-size: 3.5em;
+  }
+  .TextsInit{
+    margin-top: 50px;
+  }
+}
+
+@media screen  and (max-width:770px) {
+  #text{
+    overflow: auto;
+  }
+  .canvasFourimage{
+margin: 0px;
+  }
+  .projects{
+    width: calc();
+  }
+  .canvasTwoS{
+    width: 80%;
+    background-color: #2b2d320a !important;
+    border: 3px solid #00fff2 !important;
+  }
+  .drawOne{
+    width: 40%;
+    text-align: center;
+    height: auto;
+  }
+  .canvasOne{
+    flex-direction: column !important;
+  }
+  .DescInit{
+    font-size: medium;
+  }
+  .title{
+    animation: text-pop-up-right2 4.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    font-size: 2.5em;
+    width: 100% !important;
+
+  }
+  nav{
+    justify-content: flex-start;
+  }
+
+  nav div:last-child{
+    margin-left: 3px;
+  }
+  nav a{
+    font-size: small;
+    text-transform: uppercase;
+    color: white;
+    font-weight: bold;
+    padding: 05px 1px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+  }
+
+
+}
+
+
+@keyframes text-pop-up-right2 {
+  0% {
+    transform: translateX(-50px);
+    transform-origin: 50% 50%;
+    text-shadow: none;
+    visibility: hidden;
+  }
+
+  100% {
+    visibility: visible;
+    transform: translateX(10px);
+    transform-origin: 50% 50%;
+    text-shadow: 0 1px 0 #101218, 0 2px 0 #101218, 0 3px 0 #101218, 0 4px 0 #101218, 0 5px 0 #101218, 0 6px 0 #101218, 0 7px 0 #101218, 0 8px 0 #101218, 0 9px 0 #101218, 0 50px 30px rgba(0, 0, 0, 0.3);
+  }
+}
